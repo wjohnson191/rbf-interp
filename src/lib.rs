@@ -2,6 +2,7 @@
 
 use nalgebra::{DMatrix, DVector, SVD};
 
+#[derive(Copy, Clone)]
 pub enum Basis {
     PolyHarmonic(i32),
     Gaussian(f64),
@@ -9,6 +10,7 @@ pub enum Basis {
     InverseMultiQuadric(f64),
 }
 
+#[derive(Clone)]
 pub struct Scatter {
     // Note: could make basis a type-level parameter
     basis: Basis,
